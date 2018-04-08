@@ -22,7 +22,56 @@ public class UnitTestSorting {
         }
 
         //Now do for rest of the algorithm...................below
+    //-----------------------------------
+        //apply unsorted array and verify if the unsorted array is sorted by the given sort algorithms.
+        sort.insertionSort(unSortedArray);
+        try {
+            Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
+        }catch(Exception ex){
+            ex.getMessage();
+        }
 
+        sort.bubbleSort(unSortedArray);
+        try {
+            Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
+        }catch(Exception ex){
+            ex.getMessage();
+        }
+
+        sort.mergeSort(unSortedArray);
+        try {
+            Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
+        }catch(Exception ex){
+            ex.getMessage();
+        }
+
+        sort.quickSort(unSortedArray);
+        try {
+            Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
+        }catch(Exception ex){
+            ex.getMessage();
+        }
+
+        sort.heapSort(unSortedArray);
+        try {
+            Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
+        }catch(Exception ex){
+            ex.getMessage();
+        }
+
+        sort.bucketSort(unSortedArray);
+        try {
+            Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
+        }catch(Exception ex){
+            ex.getMessage();
+        }
+
+        sort.shellSort(unSortedArray);
+        try {
+            Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
+        }catch(Exception ex){
+            ex.getMessage();
+        }
 
     }
 }
