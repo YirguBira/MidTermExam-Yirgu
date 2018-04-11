@@ -1,9 +1,9 @@
 package design;
 
-import java.util.Scanner;
+import java.util.*;
 
-public class EmployeeInfo {
-	
+public class EmployeeInfo implements Employee {
+
  /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
  * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
  * then inherit that abstract class into EmployeeInfo class.Once you done with designing EmployeeInfo class,
@@ -20,9 +20,15 @@ public class EmployeeInfo {
 	/*
 	 * declare few static and final fields and some non-static fields
 	 */
-	static String companyName;
-	
-	/*
+	static String companyName = "ABC Soccer League";
+	final double MAX_WEEKLY_SALARY = 350000.00;
+
+	public double getMaxSalary(double MAX_WEEKLY_SALARY){
+        System.out.println(MAX_WEEKLY_SALARY);
+        return MAX_WEEKLY_SALARY;
+    }
+
+    /*
 	 * You must implement the logic for below 2 methods and 
 	 * following 2 methods are prototype as well for other methods need to be design,
 	 * as you will come up with the new ideas.
@@ -33,10 +39,10 @@ public class EmployeeInfo {
 	 * Must implement below constructor.
 	 */
 	public EmployeeInfo(int employeeId){
-		
+
 	}
     public EmployeeInfo(String name, int employeeId){
-		
+
 	}
 	
 	/*
@@ -51,6 +57,15 @@ public class EmployeeInfo {
 		int total=0;
 		return total;
 	}
+
+    public static int calculateEmployeeBonus(int numberOfYearsWithCompany, int NumberOfEmployees, int Amt){
+//        numberOfYearsWithCompany = 20;
+//        NumberOfEmployees = 200;
+//        Amt = 6000;
+        int total = numberOfYearsWithCompany * NumberOfEmployees * Amt;
+        System.out.println(total);
+        return total;
+    }
 	
 	/*
 	 * This methods should calculate Employee Pension based on salary and numbers of years with the company.
@@ -73,6 +88,90 @@ public class EmployeeInfo {
 
 		return total;
 	}
+
+	public int employeeId() {
+	    int ID = 0;
+		List<Integer> empID = new ArrayList<Integer>();
+		empID.add(0001);
+		empID.add(0002);
+		empID.add(0003);
+		empID.add(0004);
+		empID.add(0005);
+		empID.add(0006);
+		empID.add(0007);
+		System.out.println(empID);
+		return ID;
+	}
+
+	public String employeeName() {
+		String name = "";
+		List<String> empName = new ArrayList<String>();
+		empName.add("Ashley Young");
+		empName.add("Patrice Evra");
+		empName.add("Nemanja Vidic");
+		empName.add("Eric Cantona");
+		empName.add("Chris Smalling");
+		empName.add("Romelu Lukaku");
+		empName.add("Marcus Rashford");
+		System.out.println(empName);
+
+		return name;
+	}
+
+	public void EmployeeNameAndID(){
+		//Adding employee name and id to map
+		Map <String, String> empNameAndID = new HashMap<>();
+		empNameAndID.put("0001", "Ashley Young");
+		empNameAndID.put("0002", "Patrice Evra");
+		empNameAndID.put("0003", "Nemanja Vidic");
+		empNameAndID.put("0014", "Eric Cantona");
+		empNameAndID.put("0015", "Chris Smalling");
+		empNameAndID.put("0106", "Romelu Lukaku");
+		empNameAndID.put("0107", "Marcus Rashford");
+		for (Map.Entry NameID : empNameAndID.entrySet()) {
+			System.out.println(NameID.getKey()+" - "+NameID.getValue());
+		}
+	}
+
+	public void assignDepartment() {
+		//Adding employee name and id to map
+		Map<String, String> empDept = new HashMap<>();
+		empDept.put("Ashley Young", "Main Soccer Team");
+		empDept.put("Patrice Evra", "Main Soccer");
+		empDept.put("Nemanja Vidic", "Main Soccer");
+		empDept.put("Eric Cantona", "Marketing");
+		empDept.put("Chris Smalling", "Human Resource");
+		empDept.put("Romelu Lukaku", "Finance");
+		empDept.put("Marcus Rashford", "U21 Soccer Team");
+		for (Map.Entry Dept : empDept.entrySet()) {
+			System.out.println(Dept.getKey()+" - "+Dept.getValue());
+		}
+	}
+
+	public int calculateSalary() {
+		return 0;
+	}
+
+    public int calculateSalary(int NumOfEmp, int AvgSalary) {
+        NumOfEmp = 200;
+        AvgSalary = 6000;
+	    int TotSalary = NumOfEmp * AvgSalary;
+	    System.out.println(TotSalary);
+		return TotSalary;
+	}
+
+	public void benefitLayout() {
+
+	}
+
+	public void benefitLayout(int YearsWorked, double Salary) {
+		double HlthInsurancePay = Salary%20;
+		double RetirementFund = Salary%10;
+		int AnnualLeaveDays = 15+(YearsWorked*2);
+		System.out.println("Health insurance: "+HlthInsurancePay+ " Retirement contribution: "+RetirementFund+ " Annual leave days: "+AnnualLeaveDays);
+
+	}
+
 	private static class DateConversion {
 
 		public DateConversion(Months months){}

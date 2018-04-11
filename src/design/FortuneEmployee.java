@@ -1,5 +1,7 @@
 package design;
 
+import java.util.*;
+
 public class FortuneEmployee {
 
 	/**
@@ -14,7 +16,30 @@ public class FortuneEmployee {
 	 *
 	 **/
 	public static void main(String[] args) {
-		
+
+		EmployeeInfo employeeInfo = new EmployeeInfo("", 0);
+		//employeeInfo.employeeName();
+		//employeeInfo.employeeId();
+		//Name and ID of employees
+		employeeInfo.EmployeeNameAndID();
+		//Company Name
+		System.out.println(EmployeeInfo.companyName);
+		//Calculating Salary
+		employeeInfo.calculateSalary(200, 6000);
+		//Calculating Bonus
+		EmployeeInfo.calculateEmployeeBonus(20, 200, 6000);
+		//Maximum Salary
+		employeeInfo.getMaxSalary(280000);
+		//Benefits
+		employeeInfo.benefitLayout(5, 10000);
+		//Assigning employees to departments
+		employeeInfo.assignDepartment();
+
+
+
+
+
+
 
 
 	}

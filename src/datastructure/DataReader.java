@@ -1,8 +1,19 @@
 package datastructure;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Scanner;
+import java.util.Spliterator;
+
+import databases.ConnectDB;
+
+import javax.jnlp.FileContents;
+
+
 public class DataReader {
 
 	public static void main(String[] args) {
+
 		/*
 		 * User API to read the below textFile and print to console.
 		 * Use BufferedReader class. 
@@ -18,9 +29,46 @@ public class DataReader {
 		 * Use For Each loop/while loop/Iterator to retrieve data.
 		 */
 
-		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
+		//Reading from file: self-driving-car
+		String textFile = "C:/Users/Yirgu/IdeaProjects/MidtemMarch2018/src/data/self-driving-car";
+		//String textFile = System.getProperty("User.dir") + "/src/data/self-driving-car.txt";
+		FileReader fileReader = null;
+		BufferedReader bufferedReader = null;
+		try {
+			fileReader = new FileReader(textFile);
+		}catch(Exception xception){
+			System.out.println("No such file at the path specified");
+		}
+		try {
+			if(fileReader != null) {
+				bufferedReader = new BufferedReader(fileReader);
+				String Str = "";
+				while ((Str = bufferedReader.readLine()) != null) {
+					String FileContent = Str;
+					System.out.println(FileContent);
+				}
+			}
+		}catch (Exception xception){
+			xception.printStackTrace();
+		}finally{
+			if(fileReader != null){
+				try {
+					fileReader.close();
+				}catch(Exception xception){
+					xception.printStackTrace();
+				}
+			}
+			if(bufferedReader != null){
+				try {
+					bufferedReader.close();
+				}catch(Exception xception){
+					xception.printStackTrace();
+				}
+			}
 
+		}
 
+		//Storing the input in db
 
 	}
 
